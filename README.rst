@@ -2,6 +2,12 @@
 fardvag
 ========
 
+This repo provides helpful resources in working on
+`terraform-providers/terraform-provider-aws#704 <https://github.com/terraform-providers/terraform-provider-aws/issues/704>`_,
+which is a continuation of `hashicorp/terraform#13779 <https://github.com/hashicorp/terraform/issues/13779>`_.
+The solution may be related to a similar problem encountered with Route 53 records,
+`hashicorp/terraform#14717 <https://github.com/hashicorp/terraform/pull/14717/files>`_.
+
 Terraform
 ---------
 
@@ -20,3 +26,11 @@ Amazon
 
 - `API Reference: DescribeRouteTables <https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeRouteTables.html>`_
 - `VPC User Guide: Route Tables <https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html>`_
+
+In playing around with routing tables, Terraform reports an "id" associated with each route after
+creation. It is likely just an internal ID, rather than an ID originating at AWS, yet may provide
+some help.
+
+.. image:: ids_maybe.png
+  :width: 1000
+  :alt: Where do the route ids come from?
