@@ -1,2 +1,0 @@
-# fardvag
-AWS Routes test
