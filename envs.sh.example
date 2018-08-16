@@ -1,0 +1,8 @@
+export TF_VAR_vpc_id="vpc-xxxxxxxx"
+export TF_VAR_vpc_peering_conn_1="pcx-xxxxxxxx"
+export TF_VAR_vpc_peering_conn_2="pcx-xxxxxxxx"
+export TF_VAR_rt_name="goodName"
+
+export TF_VAR_destination_cidr_ipv4="cidr/16"
+export TF_VAR_destination_cidr_ipv6="ipv6_cidr/125"
+export AWS_REGION=us-west-1
