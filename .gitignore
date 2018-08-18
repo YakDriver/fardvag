@@ -9,4 +9,5 @@
 *.tfvars
 
 .tfplan
-envs.sh
+envs*.sh
+terraform*.log
