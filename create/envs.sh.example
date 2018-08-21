@@ -7,5 +7,5 @@ export TF_VAR_destination_cidr_ipv4="cidr/16"
 export TF_VAR_destination_cidr_ipv6="ipv6_cidr/125"
 export AWS_REGION=us-west-1
 
-export TF_LOG_PATH=terraform_import.log
+export TF_LOG_PATH=terraform_create.log
 export TF_LOG=DEBUG

@@ -2,11 +2,22 @@
 fardvag
 ========
 
-This repo provides helpful resources in working on
-`terraform-providers/terraform-provider-aws#704 <https://github.com/terraform-providers/terraform-provider-aws/issues/704>`_,
-which is a continuation of `hashicorp/terraform#13779 <https://github.com/hashicorp/terraform/issues/13779>`_.
-The solution may be related to a similar problem encountered with Route 53 records,
-`hashicorp/terraform#14717 <https://github.com/hashicorp/terraform/pull/14717/files>`_.
+Scripts and resources for developing, debugging, building, and installing the Terraform
+Provider AWS plugin.
+
+Currently working on issues related to importing AWS_ROUTE_TABLE.
+
+Related
+-------
+
+- Routes being deleted when importing route, then applying:
+  `terraform-providers/terraform-provider-aws#5631 <https://github.com/terraform-providers/terraform-provider-aws/issues/5631>`_
+- Importing routes?
+  `terraform-providers/terraform-provider-aws#704 <https://github.com/terraform-providers/terraform-provider-aws/issues/704>`_
+- Original importing routes
+  `hashicorp/terraform#13779 <https://github.com/hashicorp/terraform/issues/13779>`_
+- The solution may be related to a similar problem encountered with Route 53 records,
+  `hashicorp/terraform#14717 <https://github.com/hashicorp/terraform/pull/14717/files>`_
 
 Terraform
 ---------

@@ -1,0 +1,4 @@
+export AWS_REGION=us-west-1
+
+export TF_LOG_PATH=terraform_import.log
+export TF_LOG=DEBUG

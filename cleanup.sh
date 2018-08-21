@@ -13,5 +13,8 @@ rm -r .terraform
 rm .tfplan
 rm *.tfstate
 rm *.log
+rm *.tfstate.backup
+rm ./create/.tfplan
+rm ./import/.tfplan
 
 echo
