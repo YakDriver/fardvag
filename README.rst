@@ -31,6 +31,7 @@ Terraform
 - `Data Source: Route Table <https://www.terraform.io/docs/providers/aws/d/route_table.html>`_
 - `Data Source: Route Tables <https://www.terraform.io/docs/providers/aws/d/route_tables.html>`_
 - `Data Source: Route <https://www.terraform.io/docs/providers/aws/d/route.html>`_
+- `Acceptance Tests <https://www.terraform.io/docs/extend/testing/acceptance-tests/teststep.html>`_
 
 Amazon
 ------

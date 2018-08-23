@@ -10,9 +10,10 @@ terraform apply -input=false theplan
 rt_id="$(terraform output rt_id)"
 
 # clean up
-rm terraform.tfstate
+mv terraform.tfstate terraform.create.tfstate
 
 terraform init -input=false
 terraform import -input=false aws_route_table.rt "${rt_id}"
 terraform plan -input=false -out=newplan
-terraform apply -input=false newplan
+mv terraform.tfstate terraform.import.tfstate
+#terraform apply -input=false newplan
