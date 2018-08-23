@@ -11,5 +11,5 @@
 .tfplan
 envs*.sh
 terraform*.log
-theplan
-newplan
+*theplan*
+*newplan*
