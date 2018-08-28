@@ -23,7 +23,7 @@ mv temp_import.nottf import.tf
 mv create.tf temp_create.nottf
 
 terraform init -input=false
-terraform import -input=false aws_route.route_1 r-"${rt_id}"_"${TF_VAR_destination_cidr_ipv4}"
+terraform import -input=false aws_route.route_1 "${rt_id}"_"${TF_VAR_destination_cidr_ipv4}"
 terraform plan -input=false -out=newplan
 mv terraform.tfstate terraform.import.tfstate
 #terraform apply -input=false newplan
