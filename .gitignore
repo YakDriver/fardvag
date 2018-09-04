@@ -10,6 +10,6 @@
 
 .tfplan
 envs*.sh
-terraform*.log
+*.log
 *theplan*
 *newplan*

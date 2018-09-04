@@ -8,8 +8,8 @@ variable "destination_cidr_ipv6" {}
 variable "rt_id" {}
 
 resource "aws_route" "route_1" {
-  route_table_id = "${var.rt_id}"
-  destination_cidr_block = "${var.destination_cidr_ipv4}"
+  route_table_id            = "${var.rt_id}"
+  destination_cidr_block    = "${var.destination_cidr_ipv4}"
   vpc_peering_connection_id = "${var.vpc_peering_conn_1}"
 }
 

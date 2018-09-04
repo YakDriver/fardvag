@@ -14,6 +14,7 @@ resource "aws_route_table" "rt" {
   #  vpc_peering_connection_id = "${var.vpc_peering_conn_1}"
   #}
 
+
   #route {
   #  ipv6_cidr_block = "${var.destination_cidr_ipv6}"
   #  vpc_peering_connection_id = "${var.vpc_peering_conn_2}"
@@ -25,15 +26,15 @@ resource "aws_route_table" "rt" {
 }
 
 resource "aws_route" "route_1" {
-  route_table_id = "${aws_route_table.rt.id}"
-  destination_cidr_block = "${var.destination_cidr_ipv4}"
+  route_table_id            = "${aws_route_table.rt.id}"
+  destination_cidr_block    = "${var.destination_cidr_ipv4}"
   vpc_peering_connection_id = "${var.vpc_peering_conn_1}"
 }
 
 resource "aws_route" "route_2" {
-  route_table_id = "${aws_route_table.rt.id}"
+  route_table_id              = "${aws_route_table.rt.id}"
   destination_ipv6_cidr_block = "${var.destination_cidr_ipv6}"
-  vpc_peering_connection_id = "${var.vpc_peering_conn_2}"  
+  vpc_peering_connection_id   = "${var.vpc_peering_conn_2}"
 }
 
 output "rt_id" {

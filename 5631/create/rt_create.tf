@@ -10,14 +10,14 @@ resource "aws_route_table" "rt" {
   vpc_id = "${var.vpc_id}"
 
   route {
-    cidr_block = "${var.destination_cidr_ipv4}"
+    cidr_block                = "${var.destination_cidr_ipv4}"
     vpc_peering_connection_id = "${var.vpc_peering_conn_1}"
   }
 
   route {
-    ipv6_cidr_block = "${var.destination_cidr_ipv6}"
+    ipv6_cidr_block           = "${var.destination_cidr_ipv6}"
     vpc_peering_connection_id = "${var.vpc_peering_conn_2}"
-  }  
+  }
 
   tags {
     Name = "${var.rt_name}"

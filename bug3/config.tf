@@ -1,16 +1,37 @@
 variable "vpc_id" {}
 variable "vpc_peering_conn_1" {}
 variable "vpc_peering_conn_2" {}
-variable "rt_name" {}
 
-variable "destination_cidr_ipv4" {}
-variable "destination_cidr_ipv6" {}
+terraform {
+  required_version = "0.11.8"
+}
+
+provider "aws" {
+  region  = "us-east-1"
+  version = "1.33.0"
+}
+
+resource "aws_vpc" "vpc" {
+  cidr_block = "10.0.0.0/16"
+
+  tags {
+    Name = "yak-testing"
+  }
+}
+
+resource "aws_internet_gateway" "igw" {
+  vpc_id = "${aws_vpc.vpc.id}"
+
+  tags {
+    Name = "yak-testing"
+  }
+}
 
 resource "aws_route_table" "rt" {
   vpc_id = "${var.vpc_id}"
 
   route {
-    cidr_block                = "${var.destination_cidr_ipv4}"
+    cidr_block                = "123.0.0.0/16"
     vpc_peering_connection_id = "${var.vpc_peering_conn_1}"
   }
 
@@ -22,13 +43,6 @@ resource "aws_route_table" "rt" {
   tags {
     Name = "${var.rt_name}"
   }
-}
-
-resource "aws_route" "route_1" {
-  count                     = 0
-  route_table_id            = "${aws_route_table.rt.id}"
-  destination_cidr_block    = "${var.destination_cidr_ipv4}"
-  vpc_peering_connection_id = "${var.vpc_peering_conn_1}"
 }
 
 output "rt_id" {
