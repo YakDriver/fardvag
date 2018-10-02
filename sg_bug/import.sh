@@ -9,10 +9,12 @@ terraform plan -input=false -out=theplan
 terraform apply -input=false theplan
 sg_id="$(terraform output sg_id)"
 
-terraform state list
+terraform state rm aws_security_group.yak-deleterious
 terraform state rm aws_security_group_rule.ingress
+terraform state rm aws_security_group_rule.ingress_2
+terraform state list
 
-terraform import -input=false aws_security_group_rule.ingress "${sg_id}_in_tcp_8000_10.0.3.0/24"
+terraform import -input=false aws_security_group.yak-deleterious "${sg_id}"
 terraform plan -input=false -out=newplan
-#terraform apply -input=false newplan
+terraform apply -input=false newplan
 
