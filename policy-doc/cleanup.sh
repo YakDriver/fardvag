@@ -13,5 +13,6 @@ rm -r .terraform
 rm *tfstate*
 rm *.log
 rm theplan
+rm newplan
 
 echo
