@@ -9,6 +9,13 @@ echo revert your work!
 read -n 1 -s -r -p "Press any key to continue"
 
 cd $GOPATH/src/github.com/aws/aws-sdk-go
+git reset HEAD service/elasticache/examples_test.go
+git reset HEAD service/iam/examples_test.go
+git reset HEAD service/rds/examples_test.go
+git reset HEAD service/s3/bucket_location_test.go
+git reset HEAD service/s3/s3crypto/decryption_client.go
+git reset HEAD service/s3/sse_test.go
+
 git checkout -- service/elasticache/examples_test.go
 git checkout -- service/iam/examples_test.go
 git checkout -- service/rds/examples_test.go

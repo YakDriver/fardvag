@@ -4,9 +4,19 @@ resource "aws_iam_role" "example" {
   assume_role_policy = "${data.aws_iam_policy_document.instance_assume_role_policy.json}"
 
   inline_policy {
-    name = "yak_inline_test_policy"
+    name_prefix = "yak_s"
+    policy = "${data.aws_iam_policy_document.inline_policy.json}"
+  }
+
+  inline_policy {
+    name = "yak_inline"
+    policy = "${data.aws_iam_policy_document.inline_policy.json}"
+  }
+
+  inline_policy {
     policy = <<EOF
 {
+  "Version": "2012-10-17",
   "Statement": [
     {
       "Action": [
@@ -15,17 +25,10 @@ resource "aws_iam_role" "example" {
       "Effect": "Allow",
       "Resource": "*"
     }
-  ],
-  "Version": "2012-10-17"
+  ]
 }
 EOF
   }
-
-  inline_policy {
-    name = "yak_inline_test_policy2"
-    policy = "${data.aws_iam_policy_document.inline_policy.json}"
-  }
-
 }
 
 data "aws_iam_policy_document" "instance_assume_role_policy" {
