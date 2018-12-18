@@ -1,6 +1,5 @@
 #!/bin/bash
 
-current_pwd=$PWD
 success=0
 
 cd $GOPATH/src/github.com/terraform-providers/terraform-provider-aws
@@ -18,8 +17,6 @@ if [ $? = 0 ]; then
 else
     success=1
 fi
-
-cd $current_pwd
 
 if [ $success = 0 ]; then
     echo "Successfully built and installed terraform-provider-aws"

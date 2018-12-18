@@ -13,3 +13,5 @@ envs*.sh
 *.log
 *theplan*
 *newplan*
+
+.DS_*

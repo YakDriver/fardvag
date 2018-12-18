@@ -4,17 +4,13 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/s3"
 )
 
 func main() {
-	// Initialize a session in us-west-2 that the SDK will use to load
-	// credentials from the shared credentials file ~/.aws/credentials.
-	sess, _ := session.NewSession(&aws.Config{
-		Region: aws.String("us-east-1")},
-	)
+
+	sess, _ := session.NewSession()
 
 	// Create S3 service client
 	svc := s3.New(sess)
@@ -24,12 +20,15 @@ func main() {
 		exitErrorf("Unable to list buckets, %v", err)
 	}
 
-	fmt.Println("Buckets:")
+	fmt.Printf("Buckets: %v\n", len(result.Buckets))
 
-	for _, b := range result.Buckets {
-		fmt.Printf("* %s created on %s\n",
-			aws.StringValue(b.Name), aws.TimeValue(b.CreationDate))
-	}
+	/*
+		for _, b := range result.Buckets {
+			fmt.Printf("* %s created on %s\n",
+				aws.StringValue(b.Name), aws.TimeValue(b.CreationDate))
+			break
+		}
+	*/
 }
 
 func exitErrorf(msg string, args ...interface{}) {

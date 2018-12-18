@@ -3,7 +3,7 @@ resource "aws_iam_role" "example" {
   name               = "yak_role"
   assume_role_policy = "${data.aws_iam_policy_document.instance_assume_role_policy.json}"
 
-  inline_policy {}
+  inline_policy = []
 }
 
 data "aws_iam_policy_document" "instance_assume_role_policy" {
