@@ -7,10 +7,11 @@ make fmt
 make build
 
 if [ $? = 0 ]; then
-    if [ ! -d "$DIRECTORY" ]; then
-        mkdir -p ~/.terraform.d/plugins
+    directory="~/.terraform.d/plugins"
+    if [ ! -d "${directory}" ]; then
+        mkdir -p "${directory}"
     fi
-    cp $GOPATH/bin/terraform-provider-aws ~/.terraform.d/plugins
+    cp $GOPATH/bin/terraform-provider-aws "${directory}"
     if [ ! $? = 0 ]; then
         success=1
     fi
