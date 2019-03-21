@@ -7,7 +7,7 @@ make fmt
 make build
 
 if [ $? = 0 ]; then
-    directory="~/.terraform.d/plugins"
+    directory=~/.terraform.d/plugins
     if [ ! -d "${directory}" ]; then
         mkdir -p "${directory}"
     fi

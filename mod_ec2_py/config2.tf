@@ -5,5 +5,11 @@ provider "aws" {
 
 module "win-python-ec2" {
   source         = "plus3it/win-python-ec2/aws"
-  version        = "1.0.1"
+  version        = "1.0.2"
+}
+
+output "win_pass" {
+  description = "Randomly generated password assigned to Admin account"
+  value       = "${module.win-python-ec2.win_pass}"
+  sensitive   = true
 }
