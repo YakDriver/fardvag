@@ -1,0 +1,36 @@
+GetSession()
+    |
+    |---> GetSessionOptions()
+    |       |
+    |       |---> GetCredentials()
+    |       |       |
+    |       |       |---> Assume role (starting awsauth.go:233)
+    |       |
+    |       |--- Session-derived creds retrieved, if no profile (session.go:49)
+         
+
+GetSession()
+    |
+    |---> GetSessionOptions()
+    |       |
+    |       |---> GetCredentials()
+    |       |       |
+    |       |       |---> Assume role (starting awsauth.go:233)
+    |       |
+    |       |--- Profile set (session.go:59)
+    |       
+    |--- Session-derived creds retrieved, if profile (session.go:94)
+
+
+**With this PR** Session-derived creds with or without profile:
+```
+GetSession()
+    |
+    |---> GetSessionOptions()
+    |       |
+    |       |---> GetCredentials()
+    |       |       |
+    |       |       |---> GetCredentialsFromSession() (call at awsauth.go:294)
+    |       |       |
+    |       |       |---> Assume role (starting awsauth.go:233)
+```

@@ -10,7 +10,7 @@ resource "aws_ssm_maintenance_window_task" "task" {
   task_type        = "RUN_COMMAND"
   task_arn         = "AWS-RunShellScript"
   priority         = 1
-  service_role_arn = "arn:aws:iam::701759196663:role/YakTest"
+  service_role_arn = "arn:aws:iam::${var.account_id}:role/YakTest"
   max_concurrency  = "2"
   max_errors       = "1"
 
