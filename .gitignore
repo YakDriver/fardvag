@@ -9,9 +9,12 @@
 *.tfvars
 
 .tfplan
+.env
 envs*.sh
 *.log
 *theplan*
 *newplan*
 
 .DS_*
+
+.vscode/
