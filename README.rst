@@ -2,6 +2,7 @@
 Articles
 ========
 
+- `No such file or directory? Seriously, Bash? <https://medium.com/@dirk.avery/no-such-file-or-directory-seriously-ee14e51a1cf2>`_
 - `Amazon Web Services (AWS) 101 <https://medium.com/@dirk.avery/amazon-web-services-aws-101-4f5545567937>`_
 - `Upgrading MacOS: fsroot tree is invalid! Snapshot is invalid! Not enough space! Oh my! <https://medium.com/@dirk.avery/upgrading-macos-fsroot-tree-is-invalid-snapshot-is-invalid-not-enough-space-oh-my-a3e7934da3dc>`_
 - `Python Mockery Across Versions <https://medium.com/@dirk.avery/python-mockery-across-versions-3a2528b54786>`_
